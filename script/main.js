@@ -49,6 +49,7 @@
 
 	function allowDrop(event) {
 		event.preventDefault();
+    
 		if (this.childNodes.length == 1) {
 			return
 		} else {
