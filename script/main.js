@@ -49,17 +49,14 @@
 
 	function allowDrop(event) {
 		event.preventDefault();
-		let droppedElId = event.dataTransfer.getData('draggedEl');
-
-		// retrieve the dragged el by its ID, and then put it inside the current drop zone
-		this.appendChild(document.querySelector(`#${droppedElId}`));
-
-			if (droppedElId == null) {return}
-
-		
-
-		// MDN JavaScript template string
-	}
+    
+		if (this.childNodes.length == 1) {
+			return
+		} else {
+			var data = event.dataTransfer.getData("draggedEl");
+			event.target.appendChild(document.getElementById(data));
+		}
+	};
 
 	// how to we want the user to interact with the elements that we collected earlier?
 	// events are things like clikcs, drags, double-clicks, keypresses... all the ways that a user can interact with a mouse, a keyboard etc
